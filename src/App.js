@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { add, remove } from './store/counterSlice';
+import { add, clear, remove } from './store/counterSlice';
 
 function App() {
   const dispatch = useDispatch()
@@ -10,6 +10,10 @@ function App() {
 
   const handleAdd = () => {
     dispatch(add(1))
+  }
+
+  const clr = () => {
+    dispatch(clear())
   }
 
   const sub = () => {
@@ -21,6 +25,7 @@ function App() {
       <h1>Redux Counter App</h1>
       <h1>{count}</h1>
       <button className='btn' onClick={handleAdd}>add</button>
+      <button className='btn' onClick={clr}>clear</button>
       <button className='btn' onClick={sub}>subtract</button>
     </div>
   );

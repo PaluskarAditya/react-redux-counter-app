@@ -15,9 +15,12 @@ const counterSlice = createSlice({
         remove(state, action) {
             state.count -= action.payload
             // console.log(state.count)
+        },
+        clear(state, action) {
+            state.count = 0
         }
     }
 })
 
-export const { add, remove } = counterSlice.actions
+export const { add, remove, clear } = counterSlice.actions
 export default counterSlice.reducer
